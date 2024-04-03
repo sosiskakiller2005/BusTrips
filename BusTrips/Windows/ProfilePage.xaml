@@ -1,0 +1,37 @@
+﻿<Page x:Class="BusTrips.Windows.ProfilePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BusTrips.Windows"
+      mc:Ignorable="d" 
+      d:DesignHeight="994" d:DesignWidth="1920"
+      Title="ProfilePage">
+
+    <Grid Name="userGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".1*" />
+            <RowDefinition Height=".1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height=".2*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Name="fullnameTbl"/>
+        <TextBlock Text="Купленные билеты:" Grid.Row="1"/>
+        <ListView Name="ticketsLv" Grid.Row="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Из" DisplayMemberBinding="{Binding Trip.Route.DepartureCity.City.Name}"/>
+                    <GridViewColumn Header="В" DisplayMemberBinding="{Binding Trip.Route.DestinationCity.City.Name}"/>
+                    <GridViewColumn Header="Дата и время отправки" DisplayMemberBinding="{Binding Trip.DateTimeOfDeparture}"/>
+                    <GridViewColumn Header="Дата и время прибытия" DisplayMemberBinding="{Binding Trip.DateTimeOfArrival}"/>
+                    <GridViewColumn Header="Цена" DisplayMemberBinding="{Binding Cost, StringFormat={}{0:F2}}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Name="deleteTicketBtn" Content="Вернуть билет" Click="deleteTicketBtn_Click" Grid.Row="3" Margin="20,0,0,0"/>
+    </Grid>
+</Page>

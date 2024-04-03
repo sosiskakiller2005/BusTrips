@@ -1,0 +1,43 @@
+﻿<Page x:Class="BusTrips.Windows.TripsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BusTrips.Windows"
+      mc:Ignorable="d" 
+      d:DesignHeight="994" d:DesignWidth="1920"
+      Title="TripsPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Сортировать по:"/>
+            <ComboBox Name="sortCmb" Margin="20" SelectionChanged="sortCmb_SelectionChanged"/>
+        </StackPanel>
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height=".3*" />
+            </Grid.RowDefinitions>
+
+            <ListView Name="tripsLV">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Из" DisplayMemberBinding="{Binding Route.DepartureCity.City.Name}"/>
+                        <GridViewColumn Header="В" DisplayMemberBinding="{Binding Route.DestinationCity.City.Name}"/>
+                        <GridViewColumn Header="Дата и время отправки" DisplayMemberBinding="{Binding DateTimeOfDeparture}"/>
+                        <GridViewColumn Header="Дата и время прибытия" DisplayMemberBinding="{Binding DateTimeOfArrival}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button Name="buyTicketButton" Click="buyTicketButton_Click"  Content="Купить билет" HorizontalAlignment="Left" Margin="50,0,0,0" Grid.Row="1" Width="400" Height="100"/>
+        </Grid>
+    </Grid>
+</Page>
