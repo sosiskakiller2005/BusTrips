@@ -28,7 +28,7 @@ namespace BusTrips.Models
         {
             get
             {
-                return LastName + " " + Name + " " + Surname;
+                return $"{LastName} {Name} {Surname}";
             }
         }
         public string PhoneNumber { get; set; }

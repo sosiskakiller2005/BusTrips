@@ -14,8 +14,13 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
+            
+            <TextBlock Text="Из:"/>
+            <ComboBox Name="departureCityCmb" Margin="20" SelectionChanged="departureCityCmb_SelectionChanged"/>
+            <TextBlock Text="В:"/>
+            <ComboBox Name="destinationCityCmb" Margin="20" SelectionChanged="destinationCityCmb_SelectionChanged"/>
             <TextBlock Text="Сортировать по:"/>
-            <ComboBox Name="sortCmb" Margin="20" SelectionChanged="sortCmb_SelectionChanged"/>
+            <ComboBox Name="sortCmb" IsEditable="False" Margin="20" SelectionChanged="sortCmb_SelectionChanged"/>
         </StackPanel>
         
         <Grid Grid.Row="1">
@@ -32,8 +37,9 @@
                     <GridView>
                         <GridViewColumn Header="Из" DisplayMemberBinding="{Binding Route.DepartureCity.City.Name}"/>
                         <GridViewColumn Header="В" DisplayMemberBinding="{Binding Route.DestinationCity.City.Name}"/>
-                        <GridViewColumn Header="Дата и время отправки" DisplayMemberBinding="{Binding DateTimeOfDeparture}"/>
-                        <GridViewColumn Header="Дата и время прибытия" DisplayMemberBinding="{Binding DateTimeOfArrival}"/>
+                        <GridViewColumn Header="Дата и время отправки" DisplayMemberBinding="{Binding DateTimeOfDeparture, StringFormat=dd.MM.yyy HH:mm}"/>
+                        <GridViewColumn Header="Дата и время прибытия" DisplayMemberBinding="{Binding DateTimeOfArrival, StringFormat=dd.MM.yyy HH:mm}"/>
+                        <GridViewColumn Header="Осталось мест" DisplayMemberBinding="{Binding EmptySeats}"/>
                     </GridView>
                 </ListView.View>
             </ListView>

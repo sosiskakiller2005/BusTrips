@@ -18,8 +18,10 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
-
-        <TextBlock Name="fullnameTbl"/>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Name="fullnameTbl"/>
+            <Button Name="editProfileBtn" Click="editProfileBtn_Click" Height="40" Width="350" Content="Редактировать профиль" Margin="20,0,0,0"/>
+        </StackPanel>
         <TextBlock Text="Купленные билеты:" Grid.Row="1"/>
         <ListView Name="ticketsLv" Grid.Row="2">
             <ListView.View>
@@ -28,7 +30,7 @@
                     <GridViewColumn Header="В" DisplayMemberBinding="{Binding Trip.Route.DestinationCity.City.Name}"/>
                     <GridViewColumn Header="Дата и время отправки" DisplayMemberBinding="{Binding Trip.DateTimeOfDeparture}"/>
                     <GridViewColumn Header="Дата и время прибытия" DisplayMemberBinding="{Binding Trip.DateTimeOfArrival}"/>
-                    <GridViewColumn Header="Цена" DisplayMemberBinding="{Binding Cost, StringFormat={}{0:F2}}"/>
+                    <GridViewColumn Header="Цена" DisplayMemberBinding="{Binding Trip.Cost, StringFormat='0,0.'}"/>
                 </GridView>
             </ListView.View>
         </ListView>

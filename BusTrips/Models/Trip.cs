@@ -25,6 +25,8 @@ namespace BusTrips.Models
         public System.DateTime DateTimeOfDeparture { get; set; }
         public System.DateTime DateTimeOfArrival { get; set; }
         public int BusId { get; set; }
+        public Nullable<decimal> Cost { get; set; }
+        public int EmptySeats { get; set; }
     
         public virtual Bus Bus { get; set; }
         public virtual Route Route { get; set; }

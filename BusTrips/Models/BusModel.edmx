@@ -64,7 +64,6 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
-          <Property Name="Cost" Type="money" Nullable="false" />
           <Property Name="TripId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Trip">
@@ -76,12 +75,14 @@
           <Property Name="DateTimeOfDeparture" Type="datetime" Nullable="false" />
           <Property Name="DateTimeOfArrival" Type="datetime" Nullable="false" />
           <Property Name="BusId" Type="int" Nullable="false" />
+          <Property Name="Cost" Type="money" />
+          <Property Name="EmptySeats" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -325,7 +326,6 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
-          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="TripId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Trip" Relationship="Self.FK_Ticket_Trip" FromRole="Ticket" ToRole="Trip" />
           <NavigationProperty Name="User" Relationship="Self.FK_Ticket_User" FromRole="Ticket" ToRole="User" />
@@ -342,6 +342,8 @@
           <NavigationProperty Name="Bus" Relationship="Self.FK_Trip_Bus" FromRole="Trip" ToRole="Bus" />
           <NavigationProperty Name="Route" Relationship="Self.FK_Trip_Route" FromRole="Trip" ToRole="Route" />
           <NavigationProperty Name="Ticket" Relationship="Self.FK_Ticket_Trip" FromRole="Trip" ToRole="Ticket" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="EmptySeats" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -634,7 +636,6 @@
               <MappingFragment StoreEntitySet="Ticket">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="Cost" ColumnName="Cost" />
                 <ScalarProperty Name="TripId" ColumnName="TripId" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -642,6 +643,8 @@
           <EntitySetMapping Name="Trip">
             <EntityTypeMapping TypeName="BusTripsDbModel.Trip">
               <MappingFragment StoreEntitySet="Trip">
+                <ScalarProperty Name="EmptySeats" ColumnName="EmptySeats" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="RouteId" ColumnName="RouteId" />
                 <ScalarProperty Name="DateTimeOfDeparture" ColumnName="DateTimeOfDeparture" />

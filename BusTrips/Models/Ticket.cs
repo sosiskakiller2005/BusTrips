@@ -16,7 +16,6 @@ namespace BusTrips.Models
     {
         public int Id { get; set; }
         public int UserId { get; set; }
-        public decimal Cost { get; set; }
         public int TripId { get; set; }
     
         public virtual Trip Trip { get; set; }

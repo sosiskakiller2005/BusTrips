@@ -1,5 +1,6 @@
 ﻿using BusTrips.Assets;
 using BusTrips.Models;
+using BusTrips.Windows.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,11 +26,6 @@ namespace BusTrips.Windows
         private BusTripsDbEntities _context = App.GetContext();
         Ticket _selectedTicket;
         User _selectedUser;
-        public ProfilePage()
-        {
-            InitializeComponent();
-            userGrid.DataContext = App.GetContext().User;
-        }
         public ProfilePage(User selectedUser)
         {
             InitializeComponent();
@@ -55,6 +51,13 @@ namespace BusTrips.Windows
             {
                 MessageBoxHelper.Error("Выберите билет");
             }
+        }
+
+        private void editProfileBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+            EditProfileWindow editProfileWindow = new EditProfileWindow(_selectedUser);
+            editProfileWindow.ShowDialog();
         }
     }
 }

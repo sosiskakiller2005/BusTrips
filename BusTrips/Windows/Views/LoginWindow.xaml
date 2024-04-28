@@ -5,25 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BusTrips.Windows"
         mc:Ignorable="d"
-        Title="Окно авторизации" WindowStartupLocation="CenterScreen" Width="700" Height="500">
+        Title="Окно авторизации" WindowStartupLocation="CenterScreen" Width="600" Height="350">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="1.1*" />
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="30" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="auto" />
             <RowDefinition Height=".3*" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="auto" />
             <RowDefinition Height=".3*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <TextBlock Text="Логин:" Grid.Column="1"/>
         <TextBox Name="loginTb" Grid.Column="2"/>
         <TextBlock Text="Пароль:" Grid.Row="2" Grid.Column="1"/>
-        <TextBox Name="passwordTb" Grid.Column="2" Grid.Row="2"/>
-        <Button Name="enterBtn"  Width="250" Grid.Column="1" Grid.Row="4" Content="Войти" Click="enterBtn_Click"/>
+        <PasswordBox Name="passwordTb" Grid.Column="2" Grid.Row="2" />
+        <StackPanel Grid.Row="4" Grid.Column="1">
+            <Button Name="enterBtn"  Width="250" Grid.Column="1" Grid.Row="4" Content="Войти" Click="enterBtn_Click"/>
+            <TextBlock Name="registerTbl"  FontSize="15"  Grid.Row="4" Grid.Column="1" >
+                <Hyperlink Click="Hyperlink_Click">
+                    Зарегистрироваться
+                </Hyperlink>
+            </TextBlock>
+        </StackPanel>
     </Grid>
 </Window>

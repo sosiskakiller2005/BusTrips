@@ -27,26 +27,17 @@ namespace BusTrips.Windows
             _selectedUser = selectedUser;
             InitializeComponent();
             DataContext = selectedUser;
-            TripsPage tripsPage = new TripsPage(selectedUser as User);
-            mainFrame.Navigate(tripsPage);
+            mainFrame.Navigate(new TripsPage(selectedUser as User));
         }
-        //public UserWindow()
-        //{
-        //    InitializeComponent();
-        //    TripsPage tripsPage = new TripsPage();
-        //    mainFrame.Navigate(tripsPage);
-        //}
 
         private void TripsItem_Click(object sender, RoutedEventArgs e)
         {
-            TripsPage tripsPage = new TripsPage(_selectedUser as User);
-            mainFrame.Navigate(tripsPage);
+            mainFrame.Navigate(new TripsPage(_selectedUser as User));
         }
 
         private void ProfileItem_Click(object sender, RoutedEventArgs e)
         {
-            ProfilePage profilePage = new ProfilePage(_selectedUser as User);
-            mainFrame.Navigate(profilePage);
+            mainFrame.Navigate(new ProfilePage(_selectedUser as User));
         }
     }
 }
