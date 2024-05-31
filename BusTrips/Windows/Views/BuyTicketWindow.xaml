@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Окно покупки билета" 
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
-        Height="700" Width="1300" >
+        Height="600" Width="1200" >
     <Grid Margin="20,0,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
@@ -19,10 +19,10 @@
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width=".9*" />
+            <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="20" />
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width=".7*" />
             <ColumnDefinition Width="20" />
             <ColumnDefinition Width=".8*" />
             <ColumnDefinition Width=".1*" />
@@ -42,9 +42,9 @@
         <TextBlock Name="deportationCityTbl" Grid.Column="5"/>
         <TextBlock Text="В:" Grid.Row="1" Grid.Column="3"/>
         <TextBlock Name="destinationCityTbl" Grid.Row="1" Grid.Column="5"/>
-        <TextBlock Text="Дата/время отпраки:" Grid.Column="3" Grid.Row="2"/>
+        <TextBlock Text="Дата/время отпраки:" Grid.Column="3" Grid.Row="2" TextWrapping="Wrap"/>
         <TextBlock Name="dateTimeOfDeportation" Grid.Row="2" Grid.Column="5"/>
-        <TextBlock Text="Дата/время прибытия:" Grid.Column="3" Grid.Row="3"/>
+        <TextBlock Text="Дата/время прибытия:" Grid.Column="3" Grid.Row="3" TextWrapping="Wrap"/>
         <TextBlock Name="dateTimeOfArrive" Grid.Row="3" Grid.Column="5"/>
         <TextBlock Text="Стоимость:" Grid.Column="3" Grid.Row="4"/>
         <TextBlock Name="costTbl" Grid.Row="4" Grid.Column="5"/>

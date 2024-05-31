@@ -25,11 +25,9 @@ namespace BusTrips.Models
         public int DestinationCityId { get; set; }
         public double RouteLength { get; set; }
     
-        public virtual City City { get; set; }
-        public virtual City City1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Trip> Trip { get; set; }
         public virtual DepartureCity DepartureCity { get; set; }
         public virtual DestinationCity DestinationCity { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Trip> Trip { get; set; }
     }
 }

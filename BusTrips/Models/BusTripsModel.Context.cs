@@ -28,12 +28,12 @@ namespace BusTrips.Models
         public virtual DbSet<Brand> Brand { get; set; }
         public virtual DbSet<Bus> Bus { get; set; }
         public virtual DbSet<City> City { get; set; }
+        public virtual DbSet<DepartureCity> DepartureCity { get; set; }
+        public virtual DbSet<DestinationCity> DestinationCity { get; set; }
         public virtual DbSet<Model> Model { get; set; }
         public virtual DbSet<Route> Route { get; set; }
         public virtual DbSet<Ticket> Ticket { get; set; }
         public virtual DbSet<Trip> Trip { get; set; }
         public virtual DbSet<User> User { get; set; }
-        public virtual DbSet<DepartureCity> DepartureCity { get; set; }
-        public virtual DbSet<DestinationCity> DestinationCity { get; set; }
     }
 }

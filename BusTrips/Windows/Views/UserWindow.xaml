@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:BusTrips.Windows"
         mc:Ignorable="d"
         Height="1080" Width="1920" WindowState="Maximized">
-    <Grid>
+    <Grid Background="LightGray">
         <Grid.RowDefinitions>
             <RowDefinition Height="70" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <Menu FontSize="10">
+        <Menu FontSize="10" Background="LightGray">
             <MenuItem Name="TripsItem" Click="TripsItem_Click" Header="Рейсы"/>
             <MenuItem Name="ProfileItem" Click="ProfileItem_Click" Header="Личный кабинет"/>
         </Menu>

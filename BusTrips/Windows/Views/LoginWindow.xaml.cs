@@ -32,46 +32,40 @@ namespace BusTrips.Windows
         
         private void enterBtn_Click(object sender, RoutedEventArgs e)
         {
-            List<User> users = _context.User.ToList();
+                List<User> users = _context.User.ToList();
             
-            if (loginTb.Text == "" && passwordTb.Password == "")
-            {
-                MessageBoxHelper.Error("Введите логин и пароль");
-            }
-            else if (loginTb.Text == "")
-            {
-                MessageBoxHelper.Error("Введите логин");
-            }
-            else if (passwordTb.Password == "")
-            {
-                MessageBoxHelper.Error("Введите пароль");
-            }
-            else
-            {
-                string login = loginTb.Text;
-                string password = passwordTb.Password;
-                foreach (User user in users)
+                if (loginTb.Text == "" && passwordTb.Password == "")
                 {
-                    if (user.Login == login & user.Password == password)
-                    {
-                        _selectedUser = user;
-                        UserWindow userWindow = new UserWindow(_selectedUser as User);
-                        userWindow.Show();
-                        this.Close();
-                        break;
-                    }
-                    else if (user.Login != login)
-                    {
-                        MessageBoxHelper.Error("Пользователь с данным логином не найден");
-                        break;
-                    }
-                    else if (user.Login == login & user.Password != password)
-                    {
-                        MessageBoxHelper.Error("Неправильно введен пароль");
-                        break;
-                    }
+                    MessageBoxHelper.Error("Введите логин и пароль");
                 }
-            }
+                else if (loginTb.Text == "")
+                {
+                    MessageBoxHelper.Error("Введите логин");
+                }
+                else if (passwordTb.Password == "")
+                {
+                    MessageBoxHelper.Error("Введите пароль");
+                }
+                else
+                {
+                    string login = loginTb.Text;
+                    string password = passwordTb.Password;
+                    foreach (User user in users)
+                    {
+                        if (user.Login == login & user.Password == password)
+                        {
+                            _selectedUser = user;
+                            UserWindow userWindow = new UserWindow(_selectedUser as User);
+                            userWindow.Show();
+                            this.Close();
+                            break;
+                        }
+                    }
+                if (_selectedUser == null)
+                {
+                    MessageBoxHelper.Error("Пользователь с данным логином не найден");
+                }
+                }
         }
 
         private void Hyperlink_Click(object sender, RoutedEventArgs e)

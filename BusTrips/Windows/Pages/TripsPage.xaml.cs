@@ -40,16 +40,16 @@ namespace BusTrips.Windows
             InitializeComponent();
             _selectedUser = selectedUser;
             filteredTrips = _context.Trip.ToList();
-            var allCities = _context.City.ToList();
+            List<City> allCities = _context.City.ToList();
             allCities.Insert(0, new City { 
                 Name = "Все города" 
             });
 
             departureCityCmb.ItemsSource = allCities;
-            departureCityCmb.SelectedIndex = 0;
+            departureCityCmb.SelectedItem = 0;
             departureCityCmb.DisplayMemberPath = "Name";
             destinationCityCmb.ItemsSource = allCities;
-            destinationCityCmb.SelectedIndex = 0;
+            destinationCityCmb.SelectedItem = 0;
             destinationCityCmb.DisplayMemberPath = "Name";
             tripsLV.ItemsSource = _context.Trip.ToList();
             sortCmb.ItemsSource = sortByList;
@@ -81,11 +81,11 @@ namespace BusTrips.Windows
         {
             if (sortCmb.SelectedIndex == 1)
             {
-                tripsLV.ItemsSource = filteredTrips.OrderBy(t => t.Route.City.Name).ToList();
+                tripsLV.ItemsSource = filteredTrips.OrderBy(t => t.Route.DepartureCity.City.Name).ToList();
             }
             else if (sortCmb.SelectedIndex == 2)
             {
-                tripsLV.ItemsSource = filteredTrips.OrderBy(t => t.Route.City1.Name).ToList();
+                tripsLV.ItemsSource = filteredTrips.OrderBy(t => t.Route.DepartureCity.City.Name).ToList();
 
             }
             else if (sortCmb.SelectedIndex == 3)

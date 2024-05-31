@@ -10,13 +10,13 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80" />
+            <RowDefinition Height="90" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
             
             <TextBlock Text="Из:"/>
-            <ComboBox Name="departureCityCmb" Margin="20" SelectionChanged="departureCityCmb_SelectionChanged"/>
+            <ComboBox Name="departureCityCmb" Margin="20" SelectionChanged="departureCityCmb_SelectionChanged" Height="50"/>
             <TextBlock Text="В:"/>
             <ComboBox Name="destinationCityCmb" Margin="20" SelectionChanged="destinationCityCmb_SelectionChanged"/>
             <TextBlock Text="Сортировать по:"/>

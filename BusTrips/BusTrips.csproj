@@ -73,49 +73,49 @@
     </Compile>
     <Compile Include="Assets\MessageBoxHelper.cs" />
     <Compile Include="Models\Brand.cs">
-      <DependentUpon>BusModel.tt</DependentUpon>
+      <DependentUpon>BusTripsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Bus.cs">
-      <DependentUpon>BusModel.tt</DependentUpon>
+      <DependentUpon>BusTripsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BusModel.Context.cs">
+    <Compile Include="Models\BusTripsModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BusModel.Context.tt</DependentUpon>
+      <DependentUpon>BusTripsModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BusModel.cs">
+    <Compile Include="Models\BusTripsModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BusModel.tt</DependentUpon>
+      <DependentUpon>BusTripsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BusModel.Designer.cs">
+    <Compile Include="Models\BusTripsModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BusModel.edmx</DependentUpon>
+      <DependentUpon>BusTripsModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\City.cs">
-      <DependentUpon>BusModel.tt</DependentUpon>
+      <DependentUpon>BusTripsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DepartureCity.cs">
-      <DependentUpon>BusModel.tt</DependentUpon>
+      <DependentUpon>BusTripsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DestinationCity.cs">
-      <DependentUpon>BusModel.tt</DependentUpon>
+      <DependentUpon>BusTripsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model.cs">
-      <DependentUpon>BusModel.tt</DependentUpon>
+      <DependentUpon>BusTripsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Route.cs">
-      <DependentUpon>BusModel.tt</DependentUpon>
+      <DependentUpon>BusTripsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Ticket.cs">
-      <DependentUpon>BusModel.tt</DependentUpon>
+      <DependentUpon>BusTripsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Trip.cs">
-      <DependentUpon>BusModel.tt</DependentUpon>
+      <DependentUpon>BusTripsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
-      <DependentUpon>BusModel.tt</DependentUpon>
+      <DependentUpon>BusTripsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -153,12 +153,12 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <EntityDeploy Include="Models\BusModel.edmx">
+    <EntityDeploy Include="Models\BusTripsModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BusModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>BusTripsModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\BusModel.edmx.diagram">
-      <DependentUpon>BusModel.edmx</DependentUpon>
+    <None Include="Models\BusTripsModel.edmx.diagram">
+      <DependentUpon>BusTripsModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -171,18 +171,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Models\BusModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BusModel.edmx</DependentUpon>
-      <LastGenOutput>BusModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\BusModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BusModel.edmx</DependentUpon>
-      <LastGenOutput>BusModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Page Include="Styles\ButtonStyle.xaml">
@@ -239,6 +227,19 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Models\BusTripsModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BusTripsModel.edmx</DependentUpon>
+      <LastGenOutput>BusTripsModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BusTripsModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BusTripsModel.edmx</DependentUpon>
+      <LastGenOutput>BusTripsModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -24,13 +24,10 @@ namespace BusTrips.Models
         public string LastName { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string Fullname
-        {
-            get
+        public string Fullname { get
             {
-                return $"{LastName} {Name} {Surname}";
-            }
-        }
+                return LastName + " " + Name + " " + Surname;
+            } }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public string Login { get; set; }
